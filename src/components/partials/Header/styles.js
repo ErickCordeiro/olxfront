@@ -45,7 +45,7 @@ export const HeaderArea = styled.div`
                     color: #EC7F19;
                 }
 
-                &.header-container__menu__nav__button {
+                &.header-container__button {
                     background-color: #EC7F19;
                     border-radius: 4px;
                     color: #fff;
