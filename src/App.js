@@ -14,7 +14,9 @@ const App = (props) => {
     <BrowserRouter>
     <Layout>
       <Header />
+      
       <Routes />      
+      
       <Footer />
     </Layout>
     </BrowserRouter>

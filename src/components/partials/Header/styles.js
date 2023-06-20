@@ -6,16 +6,13 @@ export const HeaderArea = styled.div`
     border-bottom: 1px solid #cccccc;
     height: 60px;
 
-    .header-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2%;
+    .header-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    .header-container__logo__img {
+    .header-wrapper__logo__img {
         width: 60px;
     }
 
@@ -43,17 +40,6 @@ export const HeaderArea = styled.div`
 
                 &:hover {
                     color: #EC7F19;
-                }
-
-                &.header-container__button {
-                    background-color: #EC7F19;
-                    border-radius: 4px;
-                    color: #fff;
-                    padding: 5px 20px;
-
-                    &:hover {
-                        background-color: #c9670c;
-                    }
                 }
             }
         }
