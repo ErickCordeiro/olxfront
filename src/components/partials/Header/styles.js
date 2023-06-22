@@ -42,6 +42,17 @@ export const HeaderArea = styled.div`
                     color: #EC7F19;
                 }
             }
+
+            button {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: poniter;
+
+                &:hover {
+                    color: #EC7F19;
+                }
+            }
         }
     }
 `;
