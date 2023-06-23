@@ -1,9 +1,14 @@
 import React from 'react';
 import { FooterArea } from './styles';
+import { Container } from '../../../styled.js';
 
 const Footer = () => {
     return(
-        <FooterArea>Footer</FooterArea>
+        <FooterArea>
+            <Container>
+                Footer
+            </Container>
+        </FooterArea>
     );
 }
 

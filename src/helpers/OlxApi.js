@@ -8,6 +8,18 @@ const OlxApi = {
         );
 
         return json;
+    },
+    signup: async (name, state, email, password) => {
+        const json = await post(
+            '/register',
+            { name, state, email, password }
+        )
+
+        return json;
+    },
+    getStates: async () => {
+        const json = await get('/states');
+        return json;
     }
 };
 
