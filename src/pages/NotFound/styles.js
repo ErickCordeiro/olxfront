@@ -17,4 +17,16 @@ export const NotFountArea = styled.div`
         margin-bottom: 48px;
         color: #333333;
     }
+
+    a {
+        text-decoration: none;
+        background-color: #EC7F19;
+        border-radius: 4px;
+        color: #fff !important;
+        padding: 5px 20px;
+    
+        &:hover {
+            background-color: #c9670c;
+        }
+    }
 `;

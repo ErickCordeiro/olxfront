@@ -11,9 +11,7 @@ const NotFound = () => {
                 <h1>404</h1>
                 <h6>Página não encontrada</h6>
 
-                <ButtonLink>
-                    <Link to="/">Voltar para o início</Link>
-                </ButtonLink>
+                <Link to="/">Voltar para o início</Link>
             </NotFountArea>
         </Container>
         </>
