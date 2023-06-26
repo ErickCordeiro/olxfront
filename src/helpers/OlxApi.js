@@ -24,6 +24,10 @@ const OlxApi = {
     getCategories: async () => {
         const json = await get('/categories');
         return json.categories;
+    },
+    getAds: async () => {
+        const json = await get('/ads');
+        return json.ads;
     }
 };
 

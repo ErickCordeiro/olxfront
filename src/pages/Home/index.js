@@ -8,6 +8,7 @@ const Home = () => {
     const api = useApi();
 
     const [categories, setCategories] = useState([]);
+    const [ads, setAds] = useState([]);
 
     useEffect(() => {
         const getCategory = async () => {
@@ -21,6 +22,21 @@ const Home = () => {
         }
         
         getCategory();
+
+    }, []);
+
+    useEffect(() => {
+        const getAd = async () => {
+            try {
+                const listAds = await api.getAds();
+                setAds(listAds);
+            } catch ( error ) {
+                console.error('Error na requisição: ', error);
+            }
+            
+        }
+        
+        getAd();
 
     }, []);
 
@@ -46,7 +62,7 @@ const Home = () => {
                                         <>
                                             <Link key={index} to={`/ads?category=${item.slug}`} className="category-link">
                                                 <div>
-                                                    <img className="category-img" src={process.env.PUBLIC_URL+'/categories/'+item.slug+'.svg'} alt={item.name} />
+                                                    <img className="category-img" src={item.url} alt={item.name} />
                                                 </div>
                                                 <span>{item.name}</span>
                                             </Link>
@@ -60,7 +76,9 @@ const Home = () => {
             </SearchContainer>
 
             <Container>
-                
+                <h2>Anúncios recentes</h2>
+
+
             </Container>                        
         </>
 
