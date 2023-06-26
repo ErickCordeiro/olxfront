@@ -75,5 +75,23 @@ export const SearchContainer = styled.div`
             }
         }
     }
+`;
 
+export const AdsContainer = styled.div`
+    padding: 60px 0;
+
+    h2 {
+        font-size: 24px;
+        color: #191919;
+        margin-bottom: 18px;
+    }
+
+    .ads-container {
+        display: flex;
+        gap: 30px;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 32px 0;
+    }
 `;

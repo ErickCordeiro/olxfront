@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { Container } from '../../styled.js';
-import { SearchContainer } from './styles.js';
+import { Container, Card } from '../../styled.js';
+import { AdsContainer, SearchContainer } from './styles.js';
 import useApi from '../../helpers/OlxApi.js';
+import ShelfItem from "../../components/ShelfItem/index.js";
 
 const Home = () => {
     const api = useApi();
@@ -28,7 +29,10 @@ const Home = () => {
     useEffect(() => {
         const getAd = async () => {
             try {
-                const listAds = await api.getAds();
+                const listAds = await api.getAds({
+                    sort: 'desc',
+                    limit: 8
+                });
                 setAds(listAds);
             } catch ( error ) {
                 console.error('Error na requisição: ', error);
@@ -76,9 +80,24 @@ const Home = () => {
             </SearchContainer>
 
             <Container>
-                <h2>Anúncios recentes</h2>
-
-
+                <AdsContainer>
+                    <h2>Anúncios recentes</h2>
+                    <Card>
+                        <div className="ads-container">
+                            {ads && 
+                                <>
+                                {ads.map((item, index) => {
+                                    return (
+                                        <>
+                                            <ShelfItem key={index} data={item} />
+                                        </>
+                                    )
+                                })}
+                            </>
+                        }
+                        </div>
+                    </Card>
+                </AdsContainer>
             </Container>                        
         </>
 

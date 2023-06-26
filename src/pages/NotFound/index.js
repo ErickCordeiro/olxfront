@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { NotFountArea } from './styles.js';
-import { Container, ButtonLink } from '../../styled.js';
+import { Container } from '../../styled.js';
 
 const NotFound = () => {
     return (
