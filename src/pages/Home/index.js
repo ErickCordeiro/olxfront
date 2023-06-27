@@ -82,21 +82,19 @@ const Home = () => {
             <Container>
                 <AdsContainer>
                     <h2>Anúncios recentes</h2>
-                    <Card>
-                        <div className="ads-container">
-                            {ads && 
-                                <>
-                                {ads.map((item, index) => {
-                                    return (
-                                        <>
-                                            <ShelfItem key={index} data={item} />
-                                        </>
-                                    )
-                                })}
-                            </>
-                        }
-                        </div>
-                    </Card>
+                    <div className="ads-container">
+                        {ads && 
+                            <>
+                            {ads.map((item, index) => {
+                                return (
+                                    <>
+                                        <ShelfItem key={index} data={item} />
+                                    </>
+                                )
+                            })}
+                        </>
+                    }
+                    </div>
                 </AdsContainer>
             </Container>                        
         </>

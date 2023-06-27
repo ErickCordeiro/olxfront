@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { AdsArea } from './styles';
+import { formatPriceToBr } from "../../helpers/HelperHandler";
 
 const ShelfItem = ({ data }) => {
-    
+    const priceFormat = formatPriceToBr(data.price);
     return (
         <>
         <AdsArea>
@@ -12,10 +13,7 @@ const ShelfItem = ({ data }) => {
                     <img className="shelf-img" src={data.image} alt={data.title} />
                 </div>
                 <h3>{data.title}</h3>
-                <span>R$ {data.price.toLocaleString('pt-BR',
-                    { minimumFractionDigits: 2, maximumFractionDigits: 2 }
-                    )
-                }</span>
+                <span>{priceFormat}</span>
             </Link>
         </AdsArea>
         </>

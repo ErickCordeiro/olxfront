@@ -31,7 +31,11 @@ const OlxApi = {
             options
         );
         return json.ads;
-    }
+    },
+    getAdUnique: async (id, other = false) => {
+        const json = await get(`/ad-info/${id}`);
+        return json;
+    },
 };
 
 export default () => OlxApi;

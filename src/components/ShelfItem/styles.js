@@ -6,6 +6,10 @@ export const AdsArea = styled.div`
         color: #191919;
         font-weight: normal;
 
+        h3 {
+            font-size: 18px;
+        }
+
         img {
             width: 100%;
             max-width: 250px;

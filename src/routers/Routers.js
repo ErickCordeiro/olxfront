@@ -5,6 +5,7 @@ import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import AdsUnique from '../pages/AdsUnique';
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
       <Route path="/about" element={<About />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/ad/:id" element={<AdsUnique />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

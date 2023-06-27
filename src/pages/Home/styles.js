@@ -89,7 +89,7 @@ export const AdsContainer = styled.div`
     .ads-container {
         display: flex;
         gap: 30px;
-        justify-content: space-around;
+        justify-content: space-start;
         align-items: center;
         flex-wrap: wrap;
         padding: 32px 0;
