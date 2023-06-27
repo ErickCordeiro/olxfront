@@ -1,7 +1,36 @@
 import styled from 'styled-components';
 
+export const BreadCrumb = styled.div`
+    padding: 20px 0;
+
+    a { 
+        color: #2fb8fc;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:last-child {
+            color: #c9670c;
+        }
+    }
+
+    span {
+        color: #2fb8fc;
+        font-size: 14px;
+        font-weight: bold;
+    }
+`;
+
 export const PageArea = styled.div`
-    padding: 80px 0;
+    padding-bottom: 80px;
+
+    .react-slideshow-wrapper .images-wrap {
+        width: 100% !important;
+
+        .active {
+            width: 100% !important;
+        }
+    }
 
     .adInfo-container {
         h4 {
@@ -11,7 +40,7 @@ export const PageArea = styled.div`
         }
 
         &__header {
-            margin: 32px 0;
+            margin: 14px 0 22px 0;
             h2 {
                 font-size: 32px;
                 color: #191919;
@@ -31,11 +60,23 @@ export const PageArea = styled.div`
             &__description {
                 flex: 1;
 
-                img {
-                    display: block;
+                .slide-container {
                     width: 100%;
-                    max-height: 600px;
-                    object-fit: cover;
+                    height: 600px;
+                    margin-right: 20px;
+
+                    .each-slide {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-size: cover;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
                 }
                 
                 p {
@@ -58,7 +99,7 @@ export const PageArea = styled.div`
             }
 
             &__infos {
-                width: 25%;
+                width: 350px;
 
                 & .card {
                     background-color: #7A63D6;
@@ -94,7 +135,7 @@ export const PageArea = styled.div`
                     padding: 18px 0;
                     display: block;
                     text-align: center;
-
+                    text-decoration: none;
                 }
             }
         }
