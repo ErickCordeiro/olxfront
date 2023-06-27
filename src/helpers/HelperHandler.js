@@ -2,7 +2,7 @@ import moment from "moment";
 import 'moment/locale/pt-br'; 
 
 export const formatDateToBr = (date) => {
-    const dateFormated = moment(date).format('DD/MM/YYYY HH:mm:ss');
+    const dateFormated = moment(date).format('DD/MM/YYYY');
     return dateFormated;
 }
 
