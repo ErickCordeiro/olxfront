@@ -11,7 +11,7 @@ export const PageArea = styled.div`
         }
 
         &__header {
-            margin-bottom: 32px;
+            margin: 32px 0;
             h2 {
                 font-size: 32px;
                 color: #191919;
@@ -40,6 +40,20 @@ export const PageArea = styled.div`
                 
                 p {
                     margin-top: 18px;
+                    color: #666;
+                    font-weight: bold;
+                    font-size: 14px;
+
+                    a {
+                        text-decoration: none;
+                        color: #c9670c
+                    }
+                }
+
+                p.ad-description {
+                    font-size: 18px;
+                    font-weight: normal;
+                    line-height: 24px;
                 }
             }
 
@@ -51,13 +65,36 @@ export const PageArea = styled.div`
                     padding: 24px;
                     border-radius: 8px;
                     color: #fff;
-
-
+                    margin-bottom: 20px;
 
                     span {
                         font-size: 32px;
                         font-weight: bold;
                     }
+                }
+            }
+
+            .userInfos {
+                h5 {
+                    font-size: 26px;
+                    font-weight: normal;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin: 20px 0;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .button-link {
+                    width: 100%;
+                    padding: 18px 0;
+                    display: block;
+                    text-align: center;
+
                 }
             }
         }

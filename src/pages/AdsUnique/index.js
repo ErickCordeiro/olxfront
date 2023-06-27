@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PageArea } from './styles.js';
-import { Container, Card } from '../../styled.js';
+import { Container, Card, ButtonLink } from '../../styled.js';
 import useApi from '../../helpers/OlxApi.js';
 import { formatDateToBr, formatPriceToBr } from '../../helpers/HelperHandler.js';
 import ShelfItem from "../../components/ShelfItem/index.js";
@@ -36,19 +36,29 @@ const AdsUnique = () => {
         <Container>
             <PageArea>
                 <div className="adInfo-container">
-                    <div className="adInfo-container__header">
-                        <h2>{adInfo.title}</h2>
-                        <span>Publicado em {dateFormat}</span>
-                    </div>
-
                     <div className="adInfo-container__wrapper">
                         <div className="adInfo-container__wrapper__description">
                             <img src={adInfo.images} alt={adInfo.title} />
-                            <p>{adInfo.description}</p>
+                            <div className="adInfo-container__header">
+                                <h2>{adInfo.title}</h2>
+                                <span>Publicado em {dateFormat}</span>
+                            </div>
+                            <p>Categoria - <Link to={`/ads?category=${adInfo.category?.slug}`}>{adInfo.category?.name}</Link></p>
+                            <p className="ad-description">{adInfo.description}</p>
                         </div>
                         <div className="adInfo-container__wrapper__infos">
                             <div className="adInfo-container__wrapper card">
                                <span>{priceFormat}</span>
+                            </div>
+                            <div className="adInfo-container__wrapper userInfos">
+                                <Card>
+                                    <h5>{adInfo.user?.name}</h5>
+                                    <p>Entre em contato por e-mail <span>{adInfo.user?.email}</span></p>
+                                    <span></span>
+                                    <p>Localização: {adInfo.state}</p>
+
+                                    <ButtonLink className="button-link">Entrar em contato</ButtonLink>
+                                </Card>
                             </div>
                         </div>
                     </div>
