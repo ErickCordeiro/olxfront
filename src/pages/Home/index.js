@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { Container, Card } from '../../styled.js';
+import { Container } from '../../styled.js';
 import { AdsContainer, SearchContainer } from './styles.js';
 import useApi from '../../helpers/OlxApi.js';
 import ShelfItem from "../../components/ShelfItem/index.js";

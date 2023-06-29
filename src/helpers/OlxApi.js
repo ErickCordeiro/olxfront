@@ -32,10 +32,17 @@ const OlxApi = {
         );
         return json.ads;
     },
-    getAdUnique: async (id, other = false) => {
+    getAdUnique: async (id) => {
         const json = await get(`/ad-info/${id}`);
         return json;
     },
+    addAd: async (title, category, description, price, priceNeg, images) => {
+        const json = await post(
+            '/ad/store',
+            {title: title, category: category, description: description, price: price, priceneg: priceNeg, images},
+        );
+        return json;
+    }
 };
 
 export default () => OlxApi;
