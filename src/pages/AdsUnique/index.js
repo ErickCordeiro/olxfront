@@ -16,7 +16,7 @@ const AdsUnique = () => {
     const [adInfo, setAdInfo] = useState({});
 
     const proprietes = {
-        duration: 5000,
+        duration: 500,
         infinite: false,
         indicators: false,
         arrows: adInfo.images?.lenght > 1 ? true :  false

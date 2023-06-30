@@ -5,7 +5,8 @@ const BASE_URL = 'http://localhost:30202/api/v1'
 const token = Cookies.get('token');
 
 export const get = async (endpoint, payload = []) => {
-    const res = await fetch(`${BASE_URL + endpoint}?${qs.stringify(payload)}`);
+    const res = await fetch(`${BASE_URL + endpoint}?${qs.stringify(payload)}`)
+                      .catch(error => console.log(error));
 
     const json = await res.json();
 
@@ -26,14 +27,8 @@ export const post = async (endpoint, payload) => {
             'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify(payload)
-    });
+    }).catch(error => console.log(error));
 
     const json = await res.json();
-
-    if(json.notallowed) {
-        window.location.href = '/signin';
-        return;
-    }
-
-    return json;
+    return json;    
 }

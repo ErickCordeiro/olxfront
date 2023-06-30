@@ -39,7 +39,14 @@ const OlxApi = {
     addAd: async (title, category, description, price, priceNeg, images) => {
         const json = await post(
             '/ad/store',
-            {title: title, category: category, description: description, price: price, priceneg: priceNeg, images},
+            {
+                title,
+                category,
+                description, 
+                price,
+                priceneg: priceNeg,
+                images
+            },
         );
         return json;
     }
