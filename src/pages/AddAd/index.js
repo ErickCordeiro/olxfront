@@ -78,8 +78,7 @@ const AddAd = () => {
         }
 
         const json = await api.addAd(title, category, description, price, priceNeg, images);
-
-        if(json.error) {
+        if(!json.info) {
             setError(json.message);
             setDisabled(false);
             return;

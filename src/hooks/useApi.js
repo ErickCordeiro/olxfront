@@ -1,34 +1,37 @@
 import Cookies from 'js-cookie';
 import qs from 'qs';
+import axios from 'axios';
 
 const BASE_URL = 'http://localhost:30202/api/v1'
 const token = Cookies.get('token');
 
 export const get = async (endpoint, payload = []) => {
-    const res = await fetch(`${BASE_URL + endpoint}?${qs.stringify(payload)}`)
-                      .catch(error => console.log(error));
 
-    const json = await res.json();
+    const res = await axios.get(`${BASE_URL + endpoint}?${qs.stringify(payload)}`)
+    .then((response) => {
+        return response;
+    })
+    .catch((err) => {
+        return [];
+    });
 
-    if(json.notallowed) {
-        window.location.href = '/signin';
-        return;
-    }
-
-    return json;
+    return res;
 }
 
 export const post = async (endpoint, payload) => {
-    const res = await fetch(BASE_URL + endpoint, {
-        method: 'POST',
+
+    const body = JSON.stringify(payload);
+    const res = await axios.post(BASE_URL + endpoint, body, {
         headers: { 
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             'Authorization': 'Bearer ' + token
         },
-        body: JSON.stringify(payload)
-    }).catch(error => console.log(error));
+    }).then((response) => {
+        return response;
+    }).catch((error) => {
+        return error;
+    });
 
-    const json = await res.json();
-    return json;    
+    return res;    
 }

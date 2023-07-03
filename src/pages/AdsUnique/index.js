@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
 import { Link, useParams } from "react-router-dom";
 import { PageArea, BreadCrumb } from './styles.js';
 import { Container, Card, ButtonLink } from '../../styled.js';
@@ -8,20 +6,13 @@ import useApi from '../../helpers/OlxApi.js';
 import { formatDateToBr, formatPriceToBr } from '../../helpers/HelperHandler.js';
 import ShelfItem from "../../components/ShelfItem/index.js";
 
-
 const AdsUnique = () => {
+
     const api = useApi();
     const  { id } = useParams();
     const [loading, setLoagind] = useState([]);
     const [adInfo, setAdInfo] = useState({});
-
-    const proprietes = {
-        duration: 500,
-        infinite: false,
-        indicators: false,
-        arrows: adInfo.images?.lenght > 1 ? true :  false
-    }
-
+   
     useEffect(() => {
         const getAdInfo = async (id) => {
             try {
@@ -39,6 +30,7 @@ const AdsUnique = () => {
     const dateFormat = formatDateToBr(adInfo.createdAt);
     const priceFormat = formatPriceToBr(adInfo.price);
 
+
     return (
         <>
         <Container>
@@ -52,20 +44,17 @@ const AdsUnique = () => {
                     <div className="adInfo-container__wrapper">
                         <div className="adInfo-container__wrapper__description">
                             <div className="adInfo-container__wrapper slide-container">
+
                                 {adInfo.images &&
-                                    <Slide {...proprietes}>
-                                        {adInfo.images.map((item, index) => {
-                                            return( 
-                                                <>
-                                                    <div key={index} className="each-slide">
-                                                        <div>
-                                                            <img src={item} alt={adInfo.title} />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )
-                                        })}
-                                    </Slide>
+                                <>
+                                    {adInfo.images.map((item, index) => {
+                                        return( 
+                                            <div key={index}>
+                                                <img src={item} alt="" />
+                                            </div>
+                                        )
+                                    })}
+                                </>
                                 } 
                             </div>
 

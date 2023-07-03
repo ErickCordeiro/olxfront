@@ -12,8 +12,10 @@ export const AdsArea = styled.div`
 
         img {
             width: 100%;
+            min-height: 185px;
             max-width: 250px;
             background-size: cover;
+            object-fit: cover;
         }
 
         &:hover {

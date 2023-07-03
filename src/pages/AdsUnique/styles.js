@@ -24,14 +24,6 @@ export const BreadCrumb = styled.div`
 export const PageArea = styled.div`
     padding-bottom: 80px;
 
-    .react-slideshow-wrapper .images-wrap {
-        width: 100% !important;
-
-        .active {
-            width: 100% !important;
-        }
-    }
-
     .adInfo-container {
         h4 {
             margin: 64px 0 28px 0;

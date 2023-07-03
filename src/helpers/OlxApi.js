@@ -7,7 +7,7 @@ const OlxApi = {
             { email, password }
         );
 
-        return json;
+        return json.data;
     },
     signup: async (name, state, email, password) => {
         const json = await post(
@@ -19,22 +19,22 @@ const OlxApi = {
     },
     getStates: async () => {
         const json = await get('/states');
-        return json;
+        return json.data;
     },
     getCategories: async () => {
         const json = await get('/categories');
-        return json.categories;
+        return json.data.categories;
     },
     getAds: async (options) => {
         const json = await get(
             '/ads',
             options
         );
-        return json.ads;
+        return json.data.ads;
     },
     getAdUnique: async (id) => {
         const json = await get(`/ad-info/${id}`);
-        return json;
+        return json.data;
     },
     addAd: async (title, category, description, price, priceNeg, images) => {
         const json = await post(
@@ -48,7 +48,7 @@ const OlxApi = {
                 images
             },
         );
-        return json;
+        return json.data;
     }
 };
 
