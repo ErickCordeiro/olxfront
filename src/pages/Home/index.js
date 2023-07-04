@@ -95,6 +95,8 @@ const Home = () => {
                         </>
                     }
                     </div>
+
+                    <Link to="/ads">Todos os anúncios</Link>
                 </AdsContainer>
             </Container>                        
         </>

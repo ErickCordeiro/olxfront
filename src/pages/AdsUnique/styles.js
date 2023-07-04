@@ -57,18 +57,14 @@ export const PageArea = styled.div`
                     height: 600px;
                     margin-right: 20px;
 
-                    .each-slide {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-size: cover;
 
-                        img {
-                            display: block;
-                            width: 100%;
-                            object-fit: cover;
-                        }
+                    img {
+                        display: block;
+                        height: 600px;
+                        width: 100%;
+                        object-fit: cover;
                     }
+
                 }
                 
                 p {

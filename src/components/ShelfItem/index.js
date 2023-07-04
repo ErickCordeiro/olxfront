@@ -12,6 +12,7 @@ const ShelfItem = ({ data }) => {
                 <div>
                     <img className="shelf-img" src={data.image} alt={data.title} />
                 </div>
+                <p>{data.category.name}</p>
                 <h3>{data.title}</h3>
                 <span>{priceFormat}</span>
             </Link>

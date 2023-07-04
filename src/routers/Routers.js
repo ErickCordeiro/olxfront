@@ -8,11 +8,13 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import AdsUnique from '../pages/AdsUnique';
 import AddAd from '../pages/AddAd';
+import ListAds from '../pages/ListAds';
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/ads" element={<ListAds />} />
       <Route path="/about" element={<About />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
